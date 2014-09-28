@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL;
 
 # ABSTRACT: Portable wrapper for OpenSSL Command
-our $VERSION = '0.1.0'; # VERSION
+our $VERSION = '0.1.1'; # VERSION
 
 1;
 
@@ -20,7 +20,7 @@ Tiny::OpenSSL - Portable wrapper for OpenSSL Command
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 AUTHOR
 

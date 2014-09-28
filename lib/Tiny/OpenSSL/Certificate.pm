@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Certificate;
 
 # ABSTRACT: X509 Certificate Object.
-our $VERSION = '0.1.0'; # VERSION
+our $VERSION = '0.1.1'; # VERSION
 
 use Moo;
 use Types::Standard qw( InstanceOf );
@@ -30,7 +30,7 @@ Tiny::OpenSSL::Certificate - X509 Certificate Object.
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 METHODS
 

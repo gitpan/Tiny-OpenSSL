@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::CertificateAuthority;
 
 # ABSTRACT: Certificate Authority object.
-our $VERSION = '0.1.0'; # VERSION
+our $VERSION = '0.1.1'; # VERSION
 
 use Moo;
 use Carp;
@@ -68,7 +68,7 @@ Tiny::OpenSSL::CertificateAuthority - Certificate Authority object.
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 METHODS
 

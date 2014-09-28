@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Role::Entity;
 
 # ABSTRACT: Provides common tasks for Tiny::OpenSSL objects.
-our $VERSION = '0.1.0'; # VERSION
+our $VERSION = '0.1.1'; # VERSION
 
 use Moo::Role;
 use Types::Standard qw( Str InstanceOf );
@@ -42,7 +42,7 @@ Tiny::OpenSSL::Role::Entity - Provides common tasks for Tiny::OpenSSL objects.
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 METHODS
 
