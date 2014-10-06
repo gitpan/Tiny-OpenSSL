@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL;
 
 # ABSTRACT: Portable wrapper for OpenSSL Command
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 1;
 
@@ -20,7 +20,7 @@ Tiny::OpenSSL - Portable wrapper for OpenSSL Command
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 AUTHOR
 
@@ -35,6 +35,34 @@ This is free software, licensed under:
   The (three-clause) BSD License
 
 =head1 CHANGES
+
+=head2 Version 0.1.2 (2014-10-06)
+
+=over 4
+
+=item *
+
+Set RSA block cipher to AES256
+
+=item *
+
+Don't encrypt private key unless a password is defined.
+
+=item *
+
+Load key if key file already exists when create is called.
+
+=back
+
+=head2 Version 0.1.1 (2014-09-28)
+
+=over 4
+
+=item *
+
+Add missing Carp in Tiny::OpenSSL::CertificateSigningRequest [GH-1]
+
+=back
 
 =head2 Version 0.1.0 (2014-09-27)
 

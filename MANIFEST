@@ -7,6 +7,7 @@ META.yml
 Makefile.PL
 README
 README.md
+examples/self_sign_cert.pl
 lib/Tiny/OpenSSL.pm
 lib/Tiny/OpenSSL/Certificate.pm
 lib/Tiny/OpenSSL/CertificateAuthority.pm

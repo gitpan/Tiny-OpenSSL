@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Role::Entity;
 
 # ABSTRACT: Provides common tasks for Tiny::OpenSSL objects.
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 use Moo::Role;
 use Types::Standard qw( Str InstanceOf );
@@ -28,6 +28,16 @@ sub write {
     return 1;
 }
 
+sub load {
+    my $self = shift;
+
+    if ( -f $self->file && $self->file->lines > 0 ) {
+        $self->ascii( $self->file->slurp );
+    }
+
+    return 1;
+}
+
 1;
 
 __END__
@@ -42,7 +52,7 @@ Tiny::OpenSSL::Role::Entity - Provides common tasks for Tiny::OpenSSL objects.
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 METHODS
 
@@ -57,6 +67,10 @@ The Path::Tiny object for the file.
 =head2 write
 
 Write the artifact to the file.  By default, the file is a Path::Tiny->tempfile, override to store permanently.
+
+=head2 load
+
+Load an existing key.
 
 =head1 AUTHOR
 

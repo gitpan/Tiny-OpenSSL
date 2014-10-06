@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Subject;
 
 # ABSTRACT: X509 Subject object.
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 use Moo;
 use Types::Standard qw( Str InstanceOf Int );
@@ -45,7 +45,7 @@ Tiny::OpenSSL::Subject - X509 Subject object.
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 METHODS
 

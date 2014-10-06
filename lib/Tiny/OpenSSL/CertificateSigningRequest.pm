@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::CertificateSigningRequest;
 
 # ABSTRACT: Certificate Signing Request object.
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 use Carp;
 use Moo;
@@ -29,13 +29,17 @@ sub create {
 
     my @args = @{ $CONFIG->{req}{opts} };
 
+    push @args, '-new';
     push @args, '-subj', $self->subject->dn;
-    push @args, '-key',  $self->key->file;
+    push @args, '-key', $self->key->file;
 
-    my $pass_file = Path::Tiny->tempfile;
-    $pass_file->spew( $self->key->password );
+    my $pass_file;
 
-    push( @args, '-passin', sprintf( 'file:%s', $pass_file ) );
+    if ( $self->key->password ) {
+        $pass_file = Path::Tiny->tempfile;
+        $pass_file->spew( $self->key->password );
+        push( @args, '-passin', sprintf( 'file:%s', $pass_file ) );
+    }
 
     push @args, '-out', $self->file;
 
@@ -66,7 +70,7 @@ Tiny::OpenSSL::CertificateSigningRequest - Certificate Signing Request object.
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 METHODS
 

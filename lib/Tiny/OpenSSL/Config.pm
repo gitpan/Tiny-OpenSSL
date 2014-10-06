@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Config;
 
 # ABSTRACT: Load default Tiny::OpenSSL configuration
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 use YAML::Tiny;
 use File::ShareDir qw(dist_file);
@@ -36,7 +36,7 @@ Tiny::OpenSSL::Config - Load default Tiny::OpenSSL configuration
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 AUTHOR
 

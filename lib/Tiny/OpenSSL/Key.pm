@@ -4,7 +4,7 @@ use warnings;
 package Tiny::OpenSSL::Key;
 
 # ABSTRACT: Key object.
-our $VERSION = '0.1.1'; # VERSION
+our $VERSION = '0.1.2'; # VERSION
 
 use Carp;
 use Moo;
@@ -25,13 +25,18 @@ sub create {
 
     my @args = @{ $CONFIG->{key}{opts} };
 
+    if ( -f $self->file && $self->file->lines > 0 ) {
+        $self->load;
+        return 1;
+    }
+
     my $pass_file;
 
     if ( $self->password ) {
         $pass_file = Path::Tiny->tempfile;
 
         $pass_file->spew( $self->password );
-
+        push( @args, sprintf( '-%s', $CONFIG->{key}{block_cipher} ) );
         push( @args, '-passout', sprintf( 'file:%s', $pass_file ) );
     }
 
@@ -65,7 +70,7 @@ Tiny::OpenSSL::Key - Key object.
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 METHODS
 
